@@ -39,12 +39,12 @@ public class Book {
         this.bookid = bookid;
     }
 
-    public String getBooktitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setBooktitle(String booktitle) {
-        this.title = booktitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getIsbn() {
@@ -61,5 +61,21 @@ public class Book {
 
     public void setCopy(int copy) {
         this.copy = copy;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
+    }
+
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
     }
 }
