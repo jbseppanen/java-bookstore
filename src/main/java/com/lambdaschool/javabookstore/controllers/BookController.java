@@ -23,4 +23,5 @@ public class BookController {
     public List<Book> listAllBooks() {
         return bookRepo.findAll();
     }
+
 }
