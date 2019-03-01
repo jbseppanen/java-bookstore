@@ -2,6 +2,7 @@ package com.lambdaschool.javabookstore.controllers;
 
 import com.lambdaschool.javabookstore.models.Book;
 import com.lambdaschool.javabookstore.repositories.BookRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ public class BookController {
     @Autowired
     BookRepository bookRepo;
 
+    @ApiOperation(value = "Returns a list of all books.", response = List.class)
     @GetMapping(value = "")
     public List<Book> listAllBooks() {
         return bookRepo.findAll();

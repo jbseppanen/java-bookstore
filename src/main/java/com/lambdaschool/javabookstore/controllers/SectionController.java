@@ -1,7 +1,7 @@
 package com.lambdaschool.javabookstore.controllers;
 
-import com.lambdaschool.javabookstore.models.Author;
-import com.lambdaschool.javabookstore.repositories.AuthorRepository;
+import com.lambdaschool.javabookstore.models.Section;
+import com.lambdaschool.javabookstore.repositories.SectionRepository;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/authors", produces = MediaType.APPLICATION_JSON_VALUE)
-public class AuthorController {
+@RequestMapping(value = "/sections", produces = MediaType.APPLICATION_JSON_VALUE)
+public class SectionController {
 
     @Autowired
-    AuthorRepository authorRepo;
+    SectionRepository sectionRepo;
 
-    @ApiOperation(value = "Returns a list of all authors.", response = List.class)
+    @ApiOperation(value = "Returns a list of all sections.", response = List.class)
     @GetMapping(value = "")
-    public List<Author> listAllAuthors() {
-        return authorRepo.findAll();
+    public List<Section> listAllSections() {
+        return sectionRepo.findAll();
     }
 }
