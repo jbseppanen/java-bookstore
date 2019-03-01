@@ -23,3 +23,8 @@ INSERT INTO wrote (bookid, authorid) VALUES (3, 2);
 INSERT INTO wrote (bookid, authorid) VALUES (4, 5);
 INSERT INTO wrote (bookid, authorid) VALUES (4, 3);
 INSERT INTO wrote (bookid, authorid) VALUES (5, 4);
+
+INSERT INTO user (id, password, role, username)
+    VALUES  ('1', 'datapass', 'data', 'george'),
+            ('2', 'mgrpass', 'mgr', 'bill'),
+            ('3', 'userpass', 'user', 'yellowhat');
