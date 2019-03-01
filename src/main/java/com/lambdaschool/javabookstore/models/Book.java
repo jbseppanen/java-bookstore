@@ -11,7 +11,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long bookid;
-    private String booktitle;
+    private String title;
     private String isbn;
     private int copy;
 
@@ -21,6 +21,12 @@ public class Book {
             inverseJoinColumns = {@JoinColumn(name = "authorid")})
     @JsonIgnoreProperties("authors")
     private Set<Author> authors = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "sectionid")
+    @JsonIgnoreProperties("books")
+    private Section section;
+
 
     public Book() {
     }
@@ -34,11 +40,11 @@ public class Book {
     }
 
     public String getBooktitle() {
-        return booktitle;
+        return title;
     }
 
     public void setBooktitle(String booktitle) {
-        this.booktitle = booktitle;
+        this.title = booktitle;
     }
 
     public String getIsbn() {
